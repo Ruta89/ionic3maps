@@ -39,7 +39,7 @@ export class HomePage {
     let latLng = new google.maps.LatLng(50.262951, 19.006107);
     let mapOptions = {
       center: latLng,
-      zoom: 18,
+      zoom: 14,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     }
 
@@ -58,6 +58,18 @@ export class HomePage {
       map: this.map,
       animation: google.maps.Animation.DROP,
       position: position
+    });
+    let markerInfo = '<b>' + info + '</b>';
+    this.addInfoWindow(marker, markerInfo);
+  }
+
+  addInfoWindow(marker, content) {
+    let infoWindow = new google.maps.InfoWindow({
+      content: content
+    });
+
+    google.maps.event.addListener(marker, 'click', () => {
+      infoWindow.open(this.map, marker)
     });
   }
 
