@@ -10,4 +10,11 @@
 
   <div #map id="map"></div>
 
+  <ion-list>
+    <button ion-item (click)="focusMap(place)" *ngFor="let place of myPlaces">
+      <ion-icon name="locate" item-left small></ion-icon>
+      {{ place.name }}
+    </button>
+  </ion-list>
+
 </ion-content>
