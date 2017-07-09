@@ -39,7 +39,7 @@ export class HomePage {
     let latLng = new google.maps.LatLng(50.262951, 19.006107);
     let mapOptions = {
       center: latLng,
-      zoom: 14,
+      zoom: 13,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     }
 
@@ -76,7 +76,7 @@ export class HomePage {
   focusMap(place) {
     let position = new google.maps.LatLng(place['lat'], place['lng']);
     this.map.setCenter(position);
-    this.map.setZoom(16);
+    this.map.setZoom(15);
   }
 
 }
